@@ -1,0 +1,19 @@
+[
+  {
+    "key": "linux-tar",
+    "description": "Extract tar.gz file",
+    "command": "tar -xvf file.tar.gz",
+    "tags": [
+      "linux",
+      "archive"
+    ]
+  },
+  {
+    "key": "test",
+    "description": "Test copy",
+    "command": "echo 'Hello Clipboard'",
+    "tags": [
+      "test"
+    ]
+  }
+]
