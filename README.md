@@ -2,7 +2,7 @@
 > "Stop Googling the same Git commands every week."
 
 **Dev-Vault** is a lightning-fast, persistent Command Line Interface (CLI) tool built in **Rust**. It helps developers cache, search, and instantly retrieve complex terminal commands without leaving the terminal.
-
+****Objective: **** To learn Rust's ownership model, file I/O, and CLI ecosystem by building a persistent tool that helps developers recall complex terminal commands.
 ## 🚀 Features
 
 * **⚡ Zero-Friction Retrieval:** Copy commands directly to your system clipboard with `get`.
