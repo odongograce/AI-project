@@ -12,7 +12,7 @@
 
 * **Title:** Dev-Vault: Building a Developer's Code Snippet Manager in Rust
 * **The Problem:** "Context Switching." Leaving the terminal to Google a command breaks flow and wastes time.
-* **The Solution:** A persistent CLI tool to cache, search, and instantly retrieve terminal commands.
+* **The Solution:** A persistent CLI tool to cache, search, and instantly retrieve terminal commands without leaving the terminal.
 
 ### **Key Features Implemented**
 * ⚡ **Zero-Friction Retrieval:** Copy commands directly to system clipboard.
@@ -105,54 +105,54 @@ My Prompt:
 
 "I have set up my Rust project with clap and serde. I need to create the main data structure. Please write the code for src/main.rs that defines a Snippet struct and uses clap to define a CLI with two subcommands: Add and List. Please explain what #[derive(Parser)] does."
 
-AI Summary: The AI generated the Snippet struct and the Commands enum. It explained that #[derive(Parser)] is a macro that automatically implements command-line parsing logic based on the struct fields.
+🤖 AI Summary: The AI generated the Snippet struct and the Commands enum. It explained that #[derive(Parser)] is a macro that automatically implements command-line parsing logic based on the struct fields, saving us from writing manual string parsing code.
 
-Reflection: I learned about Rust's "Ownership" model specifically through .clone(). We had to clone string data to move it from the CLI arguments into our new Struct because Rust does not allow two variables to own the same memory simultaneously.
+💡 Reflection: I learned about Rust's "Ownership" model specifically through .clone(). We had to clone string data to move it from the CLI arguments into our new Struct because Rust does not allow two variables to own the same memory simultaneously.
 
 Prompt 2: File Handling (Load/Save)
 My Prompt:
 
 "The CLI is working! Now I need to replace the TODO comments with real file handling code. Please give me two helper functions: load_snippets() and save_snippets()."
 
-AI Summary: The AI provided helper functions using BufReader and BufWriter for performance. It utilized serde_json::to_writer_pretty so the output file is human-readable.
+🤖 AI Summary: The AI provided helper functions using BufReader and BufWriter for performance. It utilized serde_json::to_writer_pretty so the output file is human-readable.
 
-Reflection: I learned that BufReader is faster because it reduces the number of times the program asks the hard drive for data. I also saw how Result and .expect() are used to handle potential file errors safely.
+💡 Reflection: I learned that BufReader is faster because it reduces the number of times the program asks the hard drive for data. I also saw how Result and .expect() are used to handle potential file errors safely.
 
 Prompt 3: UI Improvements
 My Prompt:
 
 "I would like you to show me how to display the snippets in a pretty table using the comfy_table crate because the current output is ugly."
 
-AI Summary: The AI instructed me to add comfy-table to Cargo.toml. It provided code to initialize a Table, load the UTF8_FULL preset (for rounded borders), and loop through the data to add rows.
+🤖 AI Summary: The AI instructed me to add comfy-table to Cargo.toml. It provided code to initialize a Table, load the UTF8_FULL preset (for rounded borders), and loop through the data to add rows.
 
-Reflection: I learned how external crates can instantly upgrade the UI of a terminal app. This makes the tool feel like professional software rather than a basic script.
+💡 Reflection: I learned how external crates can instantly upgrade the UI of a terminal app. This makes the tool feel like professional software rather than a basic script.
 
 Prompt 4: The 'Get' Command & Clipboard
 My Prompt:
 
 "I want to implement the Get command. It should take a key, find the snippet, and copy the command field directly to my system clipboard."
 
-AI Summary: The AI suggested the arboard crate for cross-platform clipboard support. It showed me how to find a specific item in a Vector using .iter().find() and how to copy string data to the OS buffer.
+🤖 AI Summary: The AI suggested the arboard crate for cross-platform clipboard support. It showed me how to find a specific item in a Vector using .iter().find() and how to copy string data to the OS buffer.
 
-Reflection: I learned that interacting with the OS (like the clipboard) requires specific system libraries, but Rust creates abstract wrappers so the code looks the same on Windows, Linux, and Mac.
+💡 Reflection: I learned that interacting with the OS (like the clipboard) requires specific system libraries, but Rust creates abstract wrappers so the code looks the same on Windows, Linux, and Mac.
 
 Prompt 5: Search Implementation
 My Prompt:
 
 "Please show me the Search variant for the Enum. It should take a query string and search the key, description, AND tags."
 
-AI Summary: The AI demonstrated how to use Rust Iterators and Closures (filter(|s| ... )) to efficiently scan through the data. It used to_lowercase() to ensure the search was case-insensitive.
+🤖 AI Summary: The AI demonstrated how to use Rust Iterators and Closures (filter(|s| ... )) to efficiently scan through the data. It used to_lowercase() to ensure the search was case-insensitive.
 
-Reflection: This showed the power of functional programming in Rust. Instead of writing a long for loop with many if statements, the logic was condensed into a clean iterator chain.
+💡 Reflection: This showed the power of functional programming in Rust. Instead of writing a long for loop with many if statements, the logic was condensed into a clean iterator chain.
 
 Prompt 6: Delete & Refactoring
 My Prompt:
 
 "Add the Delete command using retain to remove items from the vector."
 
-AI Summary: The AI taught me how to use retain (which modifies the vector in-place) to remove items that match the key.
+🤖 AI Summary: The AI taught me how to use retain (which modifies the vector in-place) to remove items that match the key.
 
-Reflection: I now have a full CRUD application. I realized that handling data in this simple architecture requires loading the whole file into memory, modifying the vector, and saving it back—a pattern that works well for small datasets.
+💡 Reflection: I now have a full CRUD application. I realized that handling data in this simple architecture requires loading the whole file into memory, modifying the vector, and saving it back—a pattern that works well for small datasets.
 
 6. Common Issues & Fixes
 The most challenging part of the project was graduating from a "local script" to a "global tool."
@@ -188,13 +188,3 @@ Clap Documentation (CLI Builder)
 Serde JSON Docs
 
 Rust by Example (File I/O)
-
----
-
-## 2. Quick Summary of the Technology
-
-* **Technology:** **Rust** 🦀
-* **What is it?** A systems programming language that guarantees memory safety and thread safety without requiring a garbage collector. It is known for its high performance and strict compiler.
-* **Real-world example:** Used by **Discord** (for their high-performance backend services) and **Mozilla** (to build the Firefox browser engine).
-
----
