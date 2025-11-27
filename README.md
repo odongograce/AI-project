@@ -39,8 +39,6 @@
 ---
 
 ## 4. Installation & Setup Instructions
-----
-## 4. Installation & Setup Instructions
 
 ### Step 1: Installing Rust
 Run the following command in your terminal to download the official installer:
