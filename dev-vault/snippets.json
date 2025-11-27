@@ -15,5 +15,33 @@
     "tags": [
       "test"
     ]
+  },
+  {
+    "key": "js-watch",
+    "description": "Start JSON server on port 8000",
+    "command": "npx json-server --watch db.json --port 8000",
+    "tags": [
+      "react",
+      "backend",
+      "json"
+    ]
+  },
+  {
+    "key": "react-run",
+    "description": "Start React development server",
+    "command": "npm start",
+    "tags": [
+      "react",
+      "frontend"
+    ]
+  },
+  {
+    "key": "kill-3000",
+    "description": "Kill process on port 3000 (React stuck)",
+    "command": "npx kill-port 3000",
+    "tags": [
+      "debug",
+      "terminal"
+    ]
   }
 ]
