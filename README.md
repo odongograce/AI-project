@@ -44,12 +44,12 @@
 Run the following command in your terminal to download the official installer:
 
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh  ` ``` `
 This line downloads the script and initiates the setup.
 
 When prompted, type 1 (for "Proceed with installation (default)") and hit Enter.
 
-Step 2: Configure Your Shell
+### Step 2: Configure Your Shell
 Once the installation says "Rust is installed now. Great!", close your terminal window completely and open a new one to refresh your system PATH.
 
 Step 3: Verify It Works
