@@ -104,6 +104,10 @@ cargo build
 ```
 
 ---
+#### the system
+<img width="840" height="511" alt="image" src="https://github.com/user-attachments/assets/76279a8a-d3f2-4ae8-aa8f-b4bdd3bce623" />
+
+---
 
 ## 5. AI Prompt Journal
 
